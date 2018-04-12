@@ -1,0 +1,38 @@
+Frank Chen
+APCS2 pd2
+HW14 -- Probing the Depths...
+2018-03-05
+
+Section Uno:
+
+Q1: From any starting position, can an open tour always be found? Explain.
+	It should be possible. Let's say we're given a n*n board where n is even
+	but not 4 or 2; we'll do with 8*8. If one can find all open tours for
+	the 4*4 board in any corner of the 8*8 board, then all other starting
+	positions should have an open tour as well. That's because one can simplyd
+	rotate the board and get the same knight's tour solution just from another
+	perspective.
+	
+Q2: From any starting position, can a closed tour always be found? Explain.
+	That is not true as not all starting positions contain a closed tour. It's
+	because a closed tour requires the knight to be one move away from its
+	starting position when it touches the last untouched square. This severely
+	limits the possibilities of moves that the knight can do, so theoretically,
+	a closed tour on any starting position should not be achievable.
+	
+Q3: How do you explain the increase in execution time as n increases?
+	Every time n increases in an n*n board, the amount of backtracking and new
+	moves the knight can do will exponentially increase. This in turn increases
+	the execution time as the program considers all possible combinations of moves
+	unlike a human.
+	
+Q4: Thoughts on optimization?
+	It's helpful in making the code more efficient and thus run faster. 
+	
+Section Deux:
+
+State your cleanest algo for finding your way out of the maze.
+	1. All paths will be marked with number 0, indicating that the path is untouched.
+	2. Move to the path with the lowest number (choose any if tied).
+	3. Continue until exit is reached.
+	
